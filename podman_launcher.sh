@@ -4,7 +4,7 @@ podname="retool"
 publish_ip=$(ip route get 1 | awk '{print $NF;exit}')
 
 # build containers
-buildah bud -t retool:latest -f /opt/pusher/Dockerfile .
+buildah bud -t retool:latest -f /opt/retool/Dockerfile .
 
 podman pod rm -f ${podname}
 podman network create ${podname}
